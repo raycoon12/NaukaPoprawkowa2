@@ -11,14 +11,10 @@ public class Ellipse implements Shape{
     }
 
     @Override
-    public BoundingBox boundingBox() {
-        return new BoundingBox(center.x() - rx, center.y() - ry, rx * 2, ry * 2);
-    }
-
-    @Override
-    public String toSvg() {
-        return String.format(Locale.ENGLISH,"<ellipse rx=\"%f\" ry=\"%f\" cx=\"%f\" cy=\"%f\"/>",
-                rx,ry,center.x(),center.y());
+    public String toSvg(String extraAttributes) {
+        return String.format(Locale.ENGLISH,
+                "<ellipse rx=\"%f\" ry=\"%f\" cx=\"%f\" cy=\"%f\" %s />",
+                rx, ry, center.x(), center.y(), extraAttributes);
     }
 
 

@@ -1,4 +1,5 @@
 public interface Shape {
-    BoundingBox boundingBox();
-    String toSvg();
+    default String toSvg() {
+        return toSvg("");
+    }    String toSvg(String param);
 }
