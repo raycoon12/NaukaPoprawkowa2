@@ -1,35 +1,15 @@
-import java.io.IOException;
-
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args) throws IOException {
-        Polygon triangle = new Polygon(new Vec2[]{
-                new Vec2(0, 0),
-                new Vec2(300, 0),
-                new Vec2(150, 250)
-        });
+    public static void main(String[] args) {
+        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
+        // to see how IntelliJ IDEA suggests fixing it.
+        System.out.printf("Hello and welcome!");
 
-        Polygon rectangle = new Polygon(new Vec2[]{
-                new Vec2(350, 0),
-                new Vec2(750, 0),
-                new Vec2(750, 200),
-                new Vec2(350, 200)
-        });
-
-        Polygon pentagon = new Polygon(new Vec2[]{
-                new Vec2(0, 260),
-                new Vec2(100, 460),
-                new Vec2(300, 560),
-                new Vec2(500, 460),
-                new Vec2(600, 260)
-        });
-
-        Ellipse ellipse = new Ellipse(new Vec2(500, 700), 400, 100);
-
-        SvgScene scene = new SvgScene();
-        scene.addShape(triangle);
-        scene.addShape(rectangle);
-        scene.addShape(pentagon);
-        scene.addShape(ellipse);
-        scene.save("result.svg");
+        for (int i = 1; i <= 5; i++) {
+            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
+            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
+            System.out.println("i = " + i);
+        }
     }
 }
