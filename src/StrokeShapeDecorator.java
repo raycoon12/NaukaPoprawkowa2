@@ -8,8 +8,17 @@ public class StrokeShapeDecorator extends ShapeDecorator {
         this.width = width;
     }
 
-    public String toSvg(String extra) {
-        String formatted = String.format("stroke=\"%s\" stroke-width=\"%f\" %s", color, width, extra);
-        return decoratedShape.toSvg(formatted);
+    public String toSvg() {
+        String svg = decoratedShape.toSvg();
+        if (svg.contains("style=\"")) {
+            svg = svg.replace("\" />", ";stroke:" + color + ";stroke-width:" + width + "\" />");
+        } else {
+            svg = svg.replace("/>", " style=\"stroke:" + color + ";stroke-width:" + width + "\" />");
+        }
+        return svg;
+    }
+
+    public String toSvg(String param) {
+        return "";
     }
 }

@@ -9,14 +9,17 @@ public class Polygon implements Shape {
             this.points[i] = new Vec2(points[i]);
         }
     }
+
     @Override
-    public String toSvg(String param) {
-        String pointsString = "";
+    public String toSvg() {
+        StringBuilder pointsString = new StringBuilder();
         for (Vec2 point : points) {
-            pointsString += point.x() + "," + point.y() + " ";
+            pointsString.append(point.x()).append(",").append(point.y()).append(" ");
         }
-        return String.format(Locale.ENGLISH,
-                "<polygon points=\"%s\" %s />",
-                pointsString, param);
+        return "<polygon points=\"" + pointsString.toString().trim() + "\" />";
+    }
+
+    public String toSvg(String param) {
+        return "";
     }
 }

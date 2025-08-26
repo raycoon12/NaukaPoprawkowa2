@@ -1,13 +1,20 @@
-public class SolidFilledShapeDecorator extends ShapeDecorator{
-    String color;
+public class SolidFilledShapeDecorator extends ShapeDecorator {
+    private String color;
 
     public SolidFilledShapeDecorator(Shape decoratedShape, String color) {
         super(decoratedShape);
         this.color = color;
     }
 
-    public String toSvg()    {
-        return decoratedShape.toSvg("style=\"fill:" + color +
-                "\"");
+
+
+    @Override
+    public String toSvg() {
+        String svg = decoratedShape.toSvg();
+        return svg.replace("/>", " style=\"fill:" + color + "\" />");
+    }
+
+    public String toSvg(String param) {
+        return "";
     }
 }
