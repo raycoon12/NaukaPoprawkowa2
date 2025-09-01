@@ -6,8 +6,6 @@ public class SolidFilledShapeDecorator extends ShapeDecorator {
         this.color = color;
     }
 
-
-
     @Override
     public String toSvg() {
         String svg = decoratedShape.toSvg();
